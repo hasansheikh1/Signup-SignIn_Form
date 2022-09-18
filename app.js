@@ -81,3 +81,29 @@ return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{
 
 }
 
+function SignIn(){
+
+    var logEmail=document.getElementById("emailLogin").value;
+    var logPass=document.getElementById("passLogin").value;
+
+    var userData=localStorage.getItem("user1");
+    userData=JSON.parse(userData);
+
+    if(!userData){
+        alert("No User Exists!");
+        return false;
+    }
+
+    else if(logEmail!==userData.email && logPass!==userData.password){
+
+        alert("Invalid Credentials!");
+        return false;
+    }
+
+    else{
+
+        alert("HURAAAHH");
+        window.location.href='index.html';
+    }
+
+}

@@ -20,7 +20,7 @@
 
     <img src="loader.gif" alt="loader"/>
   </div>
-          <form id="signinForm" >
+          <form id="signinForm" onsubmit="return SignIn()">
            
             <div class="container" id="in">
               <h1>Sign In</h1>
@@ -29,10 +29,10 @@
               <p>Please fill in this form to create an account.</p>
               <hr>
               <label for="email"><b>Email</b></label>
-              <input id="email" type="text" placeholder="Enter Email" name="email" required>
+              <input id="emailLogin" type="text" placeholder="Enter Email" name="email" required>
 
               <label for="psw"><b>Password</b></label>
-              <input id="pass" type="password" placeholder="Enter Password" name="psw" required>
+              <input id="passLogin" type="password" placeholder="Enter Password" name="psw" required>
 
               
 
@@ -48,10 +48,10 @@
                 <button type="button" class="cancelbtn">Cancel</button>
                 <button type="submit" class="signupbtn">Sign Up</button>
               </div>
-              <span><b>Already a member?</span></b></span><a onClick="gayab()" href="index.html">Sign In</a>
+              <span><b>Already a member?</span></b></span><a href="index.html">Sign In</a>
             </div>
           </form>
-           
+          <!-- onClick="return "  -->
 
 
 
