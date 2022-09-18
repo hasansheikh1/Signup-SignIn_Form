@@ -6,12 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+    window.addEventListener("load", function () {
+      const loader = document.querySelector(".loader");
+      loader.className += " hidden"; // class "loader hidden"
+  });
+</script>
 </head>
-<body>
+<body id="animate">
 
-    
 
+  <div class="loader">
+
+    <img src="loader.gif" alt="loader"/>
+  </div>
           <form id="signinForm" >
+           
             <div class="container" id="in">
               <h1>Sign In</h1>
          

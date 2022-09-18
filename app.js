@@ -5,9 +5,12 @@ var form1=document.getElementById("signinForm");
 // var cpass=document.getElementById("cpass").value;
 // var add=document.getElementById("address").value;
 // var dob=document.getElementById("dob").value;
+
+
+
 function validate(){
 
- 
+ if(checkInputs()){
 
 var user={
     email:"",
@@ -28,12 +31,20 @@ signupForm.addEventListener("submit" , (e) => {
 
     // var data=JSON.stringify(user);
     window.localStorage.setItem("user1",JSON.stringify(user));
+    
+   
    
 });
  
 }
+else{
+    return false;
+}
+}
 
 function checkInputs(){
+
+    condition=true;
 
     var em=document.getElementById("email").value;
     var pas=document.getElementById("pass").value;
@@ -45,15 +56,28 @@ function checkInputs(){
     if(em==='' || pas=== '' || cpas==='' || addr==='' || dobb===''){
 
         alert("Please fill the missing fields");
-        return false;
+        condition=false;
     }
 
-    else if(){
+    else if(pas!==cpas){
+        alert("Passwords donot match");
+
+        condition=false;
 
     }
+
+    else if(!isEmail(em)){
+
+        alert("Enter Valid Email");
+        condition=false;
+}
+
+return condition;
+
 }
 
 function isEmail(emaill){
-return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(emaill);
 
 }
+
