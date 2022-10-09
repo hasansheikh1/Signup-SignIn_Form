@@ -20,14 +20,14 @@
 
     <img src="loader.gif" alt="loader"/>
   </div>
-          <form id="signinForm" onsubmit="return SignIn()">
+          <form id="signinForm" >
            
             <div class="container" id="in">
               <h1>Sign In</h1>
-         
+    
               <br>
               <p>Please fill in this form to create an account.</p>
-              <hr>
+            
               <label for="email"><b>Email</b></label>
               <input id="emailLogin" type="text" placeholder="Enter Email" name="email" required>
 
@@ -46,9 +46,9 @@
               <br>
               <div class="clearfix">
                 <button type="button" class="cancelbtn">Cancel</button>
-                <button type="submit" class="signupbtn">Sign Up</button>
+                <button type="submit" onClick="return SignIn()" class="signupbtn">Sign In</button>
               </div>
-              <span><b>Already a member?</span></b></span><a href="index.html">Sign In</a>
+              <span ><b>Not a member?</span></b></span><a id="nMember" href="index.html">Sign Up</a>
             </div>
           </form>
           <!-- onClick="return "  -->

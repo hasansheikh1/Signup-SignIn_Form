@@ -83,27 +83,30 @@ return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{
 
 function SignIn(){
 
+    userInfo=true;
     var logEmail=document.getElementById("emailLogin").value;
     var logPass=document.getElementById("passLogin").value;
 
     var userData=localStorage.getItem("user1");
     userData=JSON.parse(userData);
 
+    console.log(userData);
+
     if(!userData){
         alert("No User Exists!");
-        return false;
+        userInfo= false;
     }
 
     else if(logEmail!==userData.email && logPass!==userData.password){
 
         alert("Invalid Credentials!");
-        return false;
+        userInfo= false;
     }
 
     else{
-
+       
         alert("HURAAAHH");
-        window.location.href='index.html';
+       document.getElementById('signinForm').action="dash.html"; 
     }
-
+    return userInfo;
 }
